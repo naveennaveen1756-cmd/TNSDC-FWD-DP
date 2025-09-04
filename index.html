@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="profile">
+
+      <!-- ✅ Profile Image Section -->
+      <div class="hero-img" style="text-align:center; margin-top:20px;">
+        <img id="profilePic" alt="My Profile Picture" class="profile-pic" style="width:200px; height:200px; border-radius:50%; object-fit:cover; box-shadow:0 8px 20px rgba(0,0,0,.3);" />
+      </div>
+    </div>
+  </header>
+
+  <h1>Naveen kumar</h1>
+
+  <p>Student | Web Developer | Learner</p>
+
+  </div>
+
+  <nav>
+
+    <a href="#about">About</a>
+
+    <a href="#education">Education</a>
+
+    <a href="#skills">Skills</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+  </header>
+
+  <section id="about" class="about">
+
+    <h2>About Me</h2>
+
+    <p>Hello! I'm Naveen kumar, a passionate student eager to learn and explore new technologies. I enjoy coding, problem-solving, and working on creative projects.</p>
+
+  </section>
+
+  <section id="education" class="education">
+
+    <h2>Education</h2>
+
+    <p><strong>Bachelor of Computer Science</strong><br>
+
+      Madaras University, 2024-2027</p>
+
+    <p><strong>High School</strong><br>
+
+      Annai Sarada School, Graduated 2024</p>
+
+  </section>
+
+  <section id="skills" class="skills">
+
+    <h2>Skills</h2>
+
+    <ul>
+
+      <li>HTML</li>
+
+      <li>CSS</li>
+
+      <li>JavaScript</li>
+
+      <li>Python</li>
+
+      <li>Java</li>
+
+      <li>Teamwork</li>
+
+      <li>Problem Solving</li>
+
+    </ul>
+
+  </section>
+
+  <section id="projects" class="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project">
+
+      <h3>Portfolio Website</h3>
+
+      <p>A personal portfolio website built with HTML, CSS, and JavaScript.</p>
+
+    </div>
+
+    <div class="project">
+
+      <h3>Student Management System</h3>
+
+      <p>A Python-based project to manage student records efficiently.</p>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+
+    <h2>Contact</h2>
+
+    <p>Email: naveennaveen1756@gmail.com</p>
+
+    <p>LinkedIn: www.linkedin.com/naveenkumar</p>
+
+    <p>GitHub: github.com/naveen</p>
+  </section>
+
+  <footer>
+
+    <p>© 2025 Naveen kumar| All Rights Reserved</p>
+
+  </footer>
+
+  <!-- ✅ Script to load Google Drive Image -->
+
+  <script>
+    // Put either your file ID or full Google Drive share link here
+    const DRIVE_INPUT = "1FBoPZHxvf_qwPOZkjCVWjYMiy0orNQw0";
+    // Extract ID if full link was pasted
+    const id = (String(DRIVE_INPUT).match(/[-\w]{25,}/) || [String(DRIVE_INPUT).trim()])[0];
+    const candidates = [
+      `https://drive.google.com/uc?export=view&id=${id}`,
+      `https://drive.google.com/uc?export=download&id=${id}`,
+      `https://drive.usercontent.google.com/uc?id=${id}&export=download`,
+      `https://drive.google.com/thumbnail?id=${id}&sz=w2000`
+    ];
+    const img = document.getElementById("profilePic");
+    let i = 0;
+
+    function tryNext() {
+      if (i >= candidates.length) {
+        img.alt = "⚠️ Could not load image. Check Drive sharing settings.";
+        return;
+      }
+      const url = candidates[i++];
+      img.onerror = tryNext;
+      img.src = url;
+    }
+    tryNext();
+  </script>
+
+</body>
+
+</html>
